@@ -6,8 +6,8 @@ baseurl: ""
 # Owner / business details (used across all legal pages — keep accurate for Stripe review)
 owner:
   name: "Greg"                       # TODO: your full legal name or business name
-  email: "support@example.com"       # TODO: a monitored support email
-  location: "Your City, Country"     # TODO: jurisdiction for terms of service
+  email: "dodson.gregory@gmail.com"       # TODO: a monitored support email
+  location: "Virginia Beach, VA, USA"     # TODO: jurisdiction for terms of service
   github: "Greg89"
 
 markdown: kramdown
