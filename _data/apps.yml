@@ -1,0 +1,31 @@
+# One entry per application. Each app also needs a folder under /apps/<id>/
+# containing index.md, privacy.md, terms.md and refunds.md (copy apps/example-app).
+example-app:
+  name: Example App
+  tagline: A short one-line description of what the app does.
+  description: >-
+    Describe what the product is, who it is for and what customers get when they pay.
+    Stripe reviewers check that the site clearly explains what is being sold.
+  url: https://example.com            # live app URL (optional)
+  repo: https://github.com/Greg89/example-app   # source repo (optional)
+  status: In development             # e.g. Live, Beta, In development
+  tech: [TypeScript, React, Stripe]
+  last_updated: 2026-11-01
+  # Payments — shown on the app page and referenced by the terms/refund policy
+  payments:
+    processor: Stripe
+    currency: USD
+    plans:
+      - name: Free
+        price: "$0"
+        details: Basic features.
+      - name: Pro
+        price: "$9 / month"
+        details: All features, billed monthly. Cancel any time.
+  refunds:
+    window_days: 14
+    notes: Refunds are issued to the original payment method within 5–10 business days.
+  data_collected:
+    - Account details (name, email address)
+    - Payment information (processed and stored by Stripe; we never see full card numbers)
+    - Basic usage analytics

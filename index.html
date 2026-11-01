@@ -1,0 +1,22 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <h1>Hi, I'm {{ site.owner.name }}.</h1>
+  <p>{{ site.description }}</p>
+</section>
+
+<section id="apps">
+  <h2>Apps</h2>
+  <div class="cards">
+  {% for entry in site.data.apps %}
+    {% assign id = entry[0] %}{% assign app = entry[1] %}
+    <a class="card" href="{{ '/apps/' | append: id | append: '/' | relative_url }}">
+      <h3>{{ app.name }}</h3>
+      <p>{{ app.tagline }}</p>
+      <span class="badge">{{ app.status }}</span>
+    </a>
+  {% endfor %}
+  </div>
+</section>

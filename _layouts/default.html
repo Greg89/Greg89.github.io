@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav>
+      <a href="{{ '/#apps' | relative_url }}">Apps</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a href="https://github.com/{{ site.owner.github }}">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <p>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name }} &middot;
+      <a href="mailto:{{ site.owner.email }}">{{ site.owner.email }}</a></p>
+  </footer>
+</body>
+</html>
