@@ -15,6 +15,8 @@ layout: default
     {% if app.tech %}<li><strong>Built with:</strong> {{ app.tech | join: ', ' }}</li>{% endif %}
   </ul>
 
+  {{ content }}
+
   {% if app.payments %}
   <h2>Pricing</h2>
   <table>
@@ -26,6 +28,9 @@ layout: default
     </tbody>
   </table>
   <p>Payments are processed securely by {{ app.payments.processor }}.</p>
+  {% else %}
+  <h2>Availability &amp; pricing</h2>
+  <p>{{ app.name }} is in development. No paid plans have been announced.</p>
   {% endif %}
 
   <h2>Support</h2>

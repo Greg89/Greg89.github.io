@@ -13,7 +13,10 @@ layout: default
   <ul>{% for item in app.data_collected %}<li>{{ item }}</li>{% endfor %}</ul>
 
   <h2>How we use information</h2>
-  <p>To provide and improve the service, process payments, communicate with you about your account and comply with legal obligations. We do not sell your personal information.</p>
+  <p>To provide and improve the service, troubleshoot problems, communicate with you about your account{% if app.payments %}, process payments{% endif %} and comply with legal obligations. We do not sell your personal information.</p>
+
+  <h2>Authentication</h2>
+  <p>Sign-in is handled by Auth0. Account and authentication information is processed to verify your identity and control access to the service. See the <a href="https://auth0.com/privacy">Auth0 Privacy Policy</a>.</p>
 
   {% if app.payments %}
   <h2>Payments</h2>
