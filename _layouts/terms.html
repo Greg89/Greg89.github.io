@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% assign app = site.data.apps[page.app] %}
+<article class="legal">
+  <h1>{{ app.name }} Terms of Service</h1>
+  {% include app-nav.html %}
+  <p class="updated">Last updated: {{ app.last_updated | date: '%B %-d, %Y' }}</p>
+
+  <p>By accessing or using {{ app.name }} (the "Service"), provided by {{ site.owner.name }}, you agree to these terms.</p>
+
+  <h2>Use of the Service</h2>
+  <p>You must use the Service lawfully and must not misuse, disrupt or attempt to gain unauthorized access to it. You are responsible for keeping your account credentials secure.</p>
+
+  {% if app.payments %}
+  <h2>Subscriptions &amp; billing</h2>
+  <p>Paid plans are billed in advance in {{ app.payments.currency }} through {{ app.payments.processor }} and renew automatically until cancelled. You can cancel at any time; cancellation takes effect at the end of the current billing period. Prices may change with at least 30 days' notice. Refunds are covered by our <a href="{{ '/apps/' | append: page.app | append: '/refunds/' | relative_url }}">Refund Policy</a>.</p>
+  {% endif %}
+
+  <h2>Intellectual property</h2>
+  <p>The Service and its original content remain the property of {{ site.owner.name }}. You retain ownership of content you submit.</p>
+
+  <h2>Disclaimer &amp; limitation of liability</h2>
+  <p>The Service is provided "as is" without warranties of any kind. To the maximum extent permitted by law, {{ site.owner.name }} is not liable for indirect, incidental or consequential damages arising from your use of the Service.</p>
+
+  <h2>Termination</h2>
+  <p>We may suspend or terminate access for violations of these terms.</p>
+
+  <h2>Governing law</h2>
+  <p>These terms are governed by the laws of {{ site.owner.location }}.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:{{ site.owner.email }}">{{ site.owner.email }}</a></p>
+</article>

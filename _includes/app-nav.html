@@ -1,0 +1,7 @@
+{% assign base = '/apps/' | append: page.app | append: '/' %}
+<nav class="app-nav">
+  <a href="{{ base | relative_url }}">Overview</a>
+  <a href="{{ base | append: 'privacy/' | relative_url }}">Privacy</a>
+  <a href="{{ base | append: 'terms/' | relative_url }}">Terms</a>
+  <a href="{{ base | append: 'refunds/' | relative_url }}">Refunds</a>
+</nav>

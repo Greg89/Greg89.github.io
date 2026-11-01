@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% assign app = site.data.apps[page.app] %}
+<article>
+  <h1>{{ app.name }}</h1>
+  <p class="tagline">{{ app.tagline }}</p>
+  {% include app-nav.html %}
+
+  <p>{{ app.description }}</p>
+  <ul class="meta">
+    <li><strong>Status:</strong> {{ app.status }}</li>
+    {% if app.url %}<li><strong>Website:</strong> <a href="{{ app.url }}">{{ app.url }}</a></li>{% endif %}
+    {% if app.repo %}<li><strong>Source:</strong> <a href="{{ app.repo }}">{{ app.repo }}</a></li>{% endif %}
+    {% if app.tech %}<li><strong>Built with:</strong> {{ app.tech | join: ', ' }}</li>{% endif %}
+  </ul>
+
+  {{ content }}
+
+  {% if app.payments %}
+  <h2>Pricing</h2>
+  <table>
+    <thead><tr><th>Plan</th><th>Price ({{ app.payments.currency }})</th><th>Includes</th></tr></thead>
+    <tbody>
+    {% for plan in app.payments.plans %}
+      <tr><td>{{ plan.name }}</td><td>{{ plan.price }}</td><td>{{ plan.details }}</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <p>Payments are processed securely by {{ app.payments.processor }}.</p>
+  {% else %}
+  <h2>Availability &amp; pricing</h2>
+  <p>{{ app.name }} is in development. No paid plans have been announced.</p>
+  {% endif %}
+
+  <h2>Support</h2>
+  <p>Questions, billing issues or cancellation requests: <a href="mailto:{{ site.owner.email }}">{{ site.owner.email }}</a>.
+  We aim to respond within 2 business days.</p>
+</article>
